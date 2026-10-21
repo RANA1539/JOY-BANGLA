@@ -1,1118 +1,1029 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI",sans-serif;
+/* ================= সাধারণ সেটিং ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+} /* সব জায়গার ফাঁকা জায়গা শূন্য */
+html {
+  scroll-behavior: smooth;
+} /* মেনুতে ক্লিক করলে নরম স্ক্রল */
+body {
+  background: #f8fafc;
+  color: #1f2937;
+  overflow-x: hidden;
+} /* পাশে স্ক্রল বন্ধ */
+img {
+  max-width: 100%;
+} /* ছবি স্ক্রিনের বাইরে যাবে না */
+:root {
+  --w: 310px;
+} /* স্লাইডার কার্ডের চওড়া (মোবাইলে ছোট হবে) */
+
+/* ================= নেভবার ================= */
+nav {
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+nav h2 {
+  color: #166534;
+  font-size: 26px;
+} /* লোগো লেখা */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+} /* মেনু এক লাইনে */
+nav a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #16a34a;
 }
 
-html{
-    scroll-behavior:smooth;
+/* ================= হিরো (প্রথম বড় ব্যানার) ================= */
+.hero {
+  min-height: 100vh;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at top left, #bbf7d0, transparent 35%),
+    linear-gradient(135deg, #fff, #ecfdf5);
 }
-
-body{
-    background:#f8fafc;
-    color:#1f2937;
-    overflow-x:hidden;
+.hero-left {
+  width: 50%;
+} /* বামে লেখা */
+.hero-left h1 {
+  font-size: 72px;
+  line-height: 1.1;
+  color: #111827;
 }
-
-/* NAVBAR */
-
-nav{
-    width:100%;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(12px);
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+.hero-left h1 span {
+  color: #16a34a;
 }
-
-nav h2{
-    color:#166534;
-    font-size:26px;
+.hero-left p {
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
 }
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
+.hero-btn,
+.visit-btn {
+  display: inline-block;
+  background: #16a34a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+} /* দুই ধরনের বাটন একসাথে */
+.hero-btn {
+  margin-top: 35px;
+  padding: 15px 38px;
+  border-radius: 50px;
 }
-
-nav a{
-    text-decoration:none;
-    color:#1f2937;
-    font-weight:bold;
+.visit-btn {
+  padding: 15px 35px;
+  border-radius: 40px;
 }
-
-nav a:hover{
-    color:#16a34a;
+.hero-btn:hover,
+.visit-btn:hover {
+  background: #15803d;
+  transform: translateY(-4px);
 }
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    padding:80px 8%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:
-    radial-gradient(circle at top left,#bbf7d0,transparent 35%),
-    linear-gradient(135deg,#ffffff,#ecfdf5);
+.hero-right {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} /* ডানে ছবি */
+.hero-right img {
+  width: 430px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 50% 25% 50% 25%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: floatImg 4s ease-in-out infinite;
 }
+@keyframes floatImg {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+} /* ছবি ওঠানামা */
 
-.hero-left{
-    width:50%;
+/* ================= সেকশনের সাধারণ মাপ ও শিরোনাম ================= */
+.about,
+.highlights,
+.place {
+  padding: 90px 8%;
 }
-
-.hero-left h1{
-    font-size:72px;
-    line-height:1.1;
-    color:#111827;
-}
-
-.hero-left h1 span{
-    color:#16a34a;
-}
-
-.hero-left p{
-    margin-top:25px;
-    font-size:18px;
-    line-height:1.8;
-    color:#555;
-}
-
-.hero-btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 38px;
-    background:#16a34a;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    background:#15803d;
-    transform:translateY(-4px);
-}
-
-/* HERO IMAGE MAP STYLE */
-
-.hero-right{
-    width:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero-right{
-    width:45%;
-    display:flex;
-    justify-content:center;
-}
-
-.hero-right img{
-    width:430px;
-    height:430px;
-    object-fit:cover;
-    border-radius:50% 25% 50% 25%;
-    box-shadow:0 25px 60px rgba(0,0,0,0.25);
-    animation:floatImg 4s ease-in-out infinite;
-}
-
-@keyframes floatImg{
-    0%{ transform:translateY(0); }
-    50%{ transform:translateY(-18px); }
-    100%{ transform:translateY(0); }
-}
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-/* ABOUT */
-
-.about{
-    padding:90px 8%;
-    text-align:center;
-}
-
-.about h2{
-    font-size:42px;
-    color:#166534;
-    margin-bottom:20px;
-}
-
-.about p{
-    max-width:900px;
-    margin:auto;
-    font-size:18px;
-    line-height:1.8;
-    color:#555;
-}
-
-/* INFO BOX */
-
-.info-boxes{
-    margin-top:50px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.info-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.4s;
-}
-
-.info-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 18px 35px rgba(0,0,0,.18);
-}
-
-.info-card h4{
-    color:#777;
-    margin-bottom:12px;
-}
-
-.info-card p{
-    font-size:22px;
-    font-weight:bold;
-    color:#166534;
-}
-
-/* HIGHLIGHTS */
-
-.highlights{
-    padding:90px 8%;
-}
-
-.highlights h2{
-    text-align:center;
-    font-size:42px;
-    color:#166534;
-    margin-bottom:50px;
-}
-/* MAIN CARDS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-
-.card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    text-decoration:none;
-    color:#111;
-    box-shadow:0 12px 28px rgba(0,0,0,.10);
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 22px 45px rgba(0,0,0,.20);
-}
-
-.card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.card:hover img{
-    transform:scale(1.08);
-}
-
-.card h3{
-    text-align:center;
-    padding:20px;
-    color:#166534;
-    font-size:24px;
-}
-
-/* SPORTS FOOD PLACE */
-
-.place{
-    padding:90px 8%;
-}
-
+.about,
+.about h2,
+.highlights h2,
 .place h2,
-.place h1{
-    text-align:center;
-    font-size:42px;
-    color:#166534;
-    margin-bottom:50px;
+.place h1 {
+  text-align: center;
+}
+.about h2,
+.highlights h2,
+.place h2,
+.place h1 {
+  font-size: 42px;
+  color: #166534;
+  margin-bottom: 50px;
 }
 
-/* BANNER */
-
-.banner{
-    text-align:center;
-    padding:70px 20px 40px;
+/* ================= পরিচিতি + ৪টা তথ্য বক্স ================= */
+.about p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+}
+.info-boxes {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.info-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+}
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+.info-card h4 {
+  color: #777;
+  margin-bottom: 12px;
+}
+.info-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #166534;
 }
 
-.banner h1{
-    font-size:50px;
-    color:#166534;
-    margin-bottom:15px;
+/* ================= কার্ড (স্পট, খেলা, খাবার সবার জন্য) ================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+} /* ৩ কলাম */
+.card {
+  position: relative;
+  min-height: 260px;
+  background: #fff;
+  border-radius: 26px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.card:hover img {
+  transform: scale(1.08);
+}
+.card h3 {
+  text-align: center;
+  padding: 20px;
+  color: #166534;
+  font-size: 24px;
+}
+.card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: #fff;
+} /* ছবির উপরের লেখা */
+.card-body h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 8px;
+  padding: 0;
+  text-align: left;
+}
+.card-body p {
+  color: #e5e7eb;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.banner p{
-    color:#666;
-    font-size:18px;
-}
-/* ========================= */
-/* DETAIL PAGES */
-/* ========================= */
+/* soprt */
 
-.hero-card{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-    display:flex;
-    align-items:center;
-    background:#fff;
-    border-radius:35px;
-    overflow:hidden;
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
+.card-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 30px;
+  flex-wrap: wrap; /* 画面幅が狭いときに折返す */
+  background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 45%, #e2e8f0 100%);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  
 }
 
-.hero-card img{
-    width:45%;
-    height:420px;
-    object-fit:cover;
+/* カード全体のスタイル */
+.card {
+  background-color: #f8f9fa; /* カード背景色（薄いグレー） */
+  border-radius: 20px; /* 角丸設定 */
+  width: 420px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-text{
-    width:55%;
-    padding:60px;
+/* 画像エリアの設定 */
+.card-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
 
-.hero-text h1{
-    font-size:52px;
-    color:#166534;
-    margin-bottom:20px;
+/* 画像エリアの背景色（各カードごとに設定） */
+.bg-gray {
+  background-color: #e9ecef;
 }
 
-.hero-text p{
-    font-size:18px;
-    line-height:1.9;
-    color:#555;
-    margin-bottom:30px;
+.bg-yellow {
+  background-color: gainsboro;
 }
 
-.visit-btn{
-    display:inline-block;
-    background:#16a34a;
-    color:#fff;
-    padding:15px 35px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+.bg-blue {
+  background-color: #e0f2fe;
 }
 
-.visit-btn:hover{
-    background:#15803d;
-    transform:translateY(-5px);
+.card-image img {
+  max-width: %;
+  max-height: 80%;
+  object-fit: contain;
 }
 
-/* ========================= */
-/* PLACE CARDS */
-/* ========================= */
-
-.cox-cards{
-    display:flex;
-    flex-direction:column;
-    gap:35px;
-    width:90%;
-    margin:auto;
+/* カードのコンテンツ・テキスト関係 */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 下部のボタン位置を揃える */
 }
 
-.cox-card{
-    display:flex;
-    align-items:center;
-    background:#fff;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-    transition:.4s;
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
 }
 
-.cox-card:nth-child(even){
-    flex-direction:row-reverse;
+.card-description {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+  flex-grow: 1; /* 内容の長さに寄らずボタンを下に配置 */
 }
 
-.cox-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 45px rgba(0,0,0,.18);
+/* ボタンのスタイル */
+.card-button {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 24px;
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+  border-radius: 50px; /* カプセル型の角丸 */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  align-self: flex-start; /* 左寄せ */
+  transition: all 0.2s ease;
 }
 
-.cox-card img{
-    width:42%;
-    height:280px;
-    object-fit:cover;
-    transition:.5s;
+/* ボタンホバー時 */
+.card-button:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+/* খেলার বর্ণনা */
+
+/* ================= খাবার সেকশন (সবুজ ব্যাকগ্রাউন্ড + স্লাইড অ্যানিমেশন) ================= */
+.place {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(34, 197, 94, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #ecfdf5, #f0f9ff);
+}
+.place .cards {
+  gap: 32px;
+}
+.place .card {
+  height: 285px;
+  border-radius: 30px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition: 0.5s;
+}
+.place .card:nth-child(odd) {
+  animation: slideLeft 1s ease forwards;
+} /* বেজোড় কার্ড বাম থেকে আসে */
+.place .card:nth-child(even) {
+  animation: slideRight 1s ease forwards;
+} /* জোড় কার্ড ডান থেকে আসে */
+.place .card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.place .card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.place .card:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.place .card:nth-child(4) {
+  animation-delay: 1.1s;
+}
+.place .card:nth-child(5) {
+  animation-delay: 1.4s;
+}
+.place .card:nth-child(6) {
+  animation-delay: 1.7s;
+}
+.place .card img {
+  height: 100%;
+  transition: 0.7s;
+}
+.place .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+} /* ছবির নিচে কালো ছায়া */
+.place .card > h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  color: #fff;
+} /* খাবারের নাম ছবির উপরে */
+.place .card:hover {
+  transform: translateY(-15px) scale(1.04);
+  box-shadow: 0 28px 60px rgba(22, 163, 74, 0.35);
+}
+.place .card:hover img {
+  transform: scale(1.15);
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.cox-card:hover img{
-    transform:scale(1.06);
+/* ================= ডিটেইল পেজ (dhaka.html, cox.html ইত্যাদি) ================= */
+.banner {
+  text-align: center;
+  padding: 70px 20px 40px;
 }
-
-.cox-content{
-    width:58%;
-    padding:35px;
+.banner h1 {
+  font-size: 50px;
+  color: #166534;
+  margin-bottom: 15px;
 }
-
-.cox-content h3{
-    font-size:30px;
-    color:#166534;
-    margin-bottom:15px;
+.banner p {
+  color: #666;
+  font-size: 18px;
 }
-
-.cox-content p{
-    font-size:17px;
-    line-height:1.8;
-    color:#555;
+.hero-card {
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+.hero-card img {
+  width: 45%;
+  height: 420px;
+  object-fit: cover;
+}
+.hero-text {
+  width: 55%;
+  padding: 60px;
+}
+.hero-text h1 {
+  font-size: 52px;
+  color: #166534;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 30px;
 }
 .dhaka-cards,
-.cox-cards{
-    width:90%;
-    max-width:1200px;
-    margin:60px auto;
-    display:flex;
-    flex-direction:column;
-    gap:35px;
-}
-
+.cox-cards {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+} /* কার্ড উপর-নিচে */
 .dhaka-card,
-.cox-card{
-    display:flex;
-    align-items:center;
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-    transition:.4s;
+.cox-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: 0.4s;
 }
-
 .dhaka-card:nth-child(even),
-.cox-card:nth-child(even){
-    flex-direction:row-reverse;
+.cox-card:nth-child(even) {
+  flex-direction: row-reverse;
+} /* জোড় কার্ডে ছবি ডানে */
+.cox-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
 }
-
 .dhaka-card img,
-.cox-card img{
-    width:42%;
-    height:270px;
-    object-fit:cover;
+.cox-card img {
+  width: 42%;
+  height: 270px;
+  object-fit: cover;
 }
-
 .card-content,
-.cox-content{
-    width:58%;
-    padding:40px;
+.cox-content {
+  width: 58%;
+  padding: 40px;
 }
-
 .card-content h3,
-.cox-content h3{
-    font-size:30px;
-    color:#166534;
-    margin-bottom:15px;
-}
-.card{
-    position:relative;
-    border-radius:26px;
-    overflow:hidden;
-    min-height:260px;
-}
-
-.card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    display:block;
-}
-
-.card-body{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:25px;
-    background:linear-gradient(transparent, rgba(0,0,0,.75));
-    color:white;
-}
-
-.card-body h3{
-    color:white;
-    font-size:24px;
-    margin-bottom:8px;
-}
-
-.card-body p{
-    color:#e5e7eb;
-    font-size:15px;
-    line-height:1.6;
-}
-/* ===============================
-   BANDARBAN PREMIUM DESIGN
-================================ */
-
-.place{
-    background:
-    radial-gradient(circle at top left, rgba(34,197,94,.20), transparent 35%),
-    linear-gradient(135deg,#ecfdf5,#f0f9ff);
-}
-
-.place .cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:32px;
-}
-
-.place .card{
-    position:relative;
-    height:285px;
-    border-radius:30px;
-    overflow:hidden;
-    box-shadow:0 18px 40px rgba(0,0,0,.18);
-    opacity:0;
-    transition:.5s;
-}
-
-/* ডানে-বামে Animation */
-
-.place .card:nth-child(odd){
-    animation:slideLeft 1s ease forwards;
-}
-
-.place .card:nth-child(even){
-    animation:slideRight 1s ease forwards;
-}
-
-/* একটার পর একটা */
-
-.place .card:nth-child(1){ animation-delay:.2s; }
-.place .card:nth-child(2){ animation-delay:.5s; }
-.place .card:nth-child(3){ animation-delay:.8s; }
-.place .card:nth-child(4){ animation-delay:1.1s; }
-.place .card:nth-child(5){ animation-delay:1.4s; }
-.place .card:nth-child(6){ animation-delay:1.7s; }
-
-.place .card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.7s;
-}
-
-.place .card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.20),transparent);
-}
-
-.place .card-body{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:2;
-    padding:25px;
-    color:white;
-}
-
-.place .card-body h3{
-    color:white;
-    font-size:26px;
-    margin-bottom:8px;
-}
-
-.place .card-body p{
-    color:#e5e7eb;
-    font-size:14px;
-    line-height:1.6;
-}
-
-/* Hover */
-
-.place .card:hover{
-    transform:translateY(-15px) scale(1.04);
-    box-shadow:0 28px 60px rgba(22,163,74,.35);
-}
-
-.place .card:hover img{
-    transform:scale(1.15);
-}
-
-/* Keyframes */
-
-@keyframes slideLeft{
-    from{
-        opacity:0;
-        transform:translateX(-120px) scale(.95);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0) scale(1);
-    }
-}
-
-@keyframes slideRight{
-    from{
-        opacity:0;
-        transform:translateX(120px) scale(.95);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0) scale(1);
-    }
-}
-/* =========================================
-   HORIZONTAL HERITAGE SLIDER
-========================================= */
-
-.heritage-slider-section{
-    padding:95px 7%;
-    overflow:hidden;
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(34,197,94,.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #f8fff9,
-            #effaf4,
-            #f8fafc
-        );
-}
-
-.heritage-slider-heading{
-    max-width:800px;
-    margin:0 auto 48px;
-    text-align:center;
-}
-
-.heritage-slider-heading span{
-    display:inline-block;
-    margin-bottom:14px;
-    padding:8px 18px;
-    border-radius:30px;
-    background:#dcfce7;
-    color:#15803d;
-    font-weight:700;
-}
-
-.heritage-slider-heading h2{
-    margin-bottom:14px;
-    color:#14532d;
-    font-size:42px;
-}
-
-.heritage-slider-heading p{
-    color:#64748b;
-    font-size:17px;
-    line-height:1.8;
-}
-
-/* Horizontal Scroll */
-
-.heritage-slider{
-    display:flex;
-    gap:25px;
-    overflow-x:auto;
-    padding:15px 5px 30px;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-}
-
-.heritage-slider::-webkit-scrollbar{
-    height:10px;
-}
-
-.heritage-slider::-webkit-scrollbar-track{
-    background:#d1fae5;
-    border-radius:20px;
-}
-
-.heritage-slider::-webkit-scrollbar-thumb{
-    background:#16a34a;
-    border-radius:20px;
-}
-
-/* Card */
-
-.heritage-slide-card{
-    min-width:310px;
-    max-width:310px;
-    position:relative;
-    height:390px;
-    flex-shrink:0;
-    overflow:hidden;
-    border-radius:28px;
-    scroll-snap-align:start;
-    box-shadow:0 18px 40px rgba(0,0,0,.16);
-    transition:.5s;
-}
-
-.heritage-slide-card img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    transition:.7s;
-}
-
-.heritage-slide-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.90),
-            rgba(0,0,0,.15),
-            transparent 60%
-        );
-}
-
-.heritage-slide-text{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:2;
-    padding:26px;
-    color:white;
-    transform:translateY(8px);
-    transition:.5s;
-}
-
-.heritage-slide-text h3{
-    margin-bottom:8px;
-    color:white;
-    font-size:24px;
-}
-
-.heritage-slide-text p{
-    color:#e5e7eb;
-    font-size:14px;
-    line-height:1.6;
-}
-
-/* Hover Animation */
-
-.heritage-slide-card:hover{
-    transform:translateY(-12px) scale(1.03);
-    box-shadow:0 28px 60px rgba(22,163,74,.28);
-}
-
-.heritage-slide-card:hover img{
-    transform:scale(1.13);
-}
-
-.heritage-slide-card:hover .heritage-slide-text{
-    transform:translateY(0);
-}
-
-/* Mobile */
-
-@media(max-width:650px){
-
-    .heritage-slider-section{
-        padding:75px 6%;
-    }
-
-    .heritage-slider-heading h2{
-        font-size:34px;
-    }
-
-    .heritage-slide-card{
-        min-width:270px;
-        max-width:270px;
-        height:350px;
-    }
-}
-/* =========================================
-   UNIVERSITY SLIDER SECTION
-========================================= */
-
-.university-section{
-    padding:100px 7%;
-    overflow:hidden;
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(16,185,129,.16),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #f0fdf4,
-            #f8fafc,
-            #ecfdf5
-        );
-}
-
-.university-heading{
-    max-width:850px;
-    margin:0 auto 50px;
-    text-align:center;
-}
-
-.university-heading span{
-    display:inline-block;
-    padding:9px 22px;
-    margin-bottom:16px;
-    border-radius:50px;
-    background:#dcfce7;
-    color:#15803d;
-    font-size:15px;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.university-heading h2{
-    margin-bottom:15px;
-    color:#064e3b;
-    font-size:42px;
-}
-
-.university-heading p{
-    color:#64748b;
-    font-size:17px;
-    line-height:1.8;
-}
-
-
-/* Horizontal Slider */
-
-.university-slider{
-    display:flex;
-    gap:26px;
-    overflow-x:auto;
-    padding:15px 8px 35px;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-}
-
-.university-slider::-webkit-scrollbar{
-    height:9px;
-}
-
-.university-slider::-webkit-scrollbar-track{
-    background:#d1fae5;
-    border-radius:30px;
-}
-
-.university-slider::-webkit-scrollbar-thumb{
-    background:linear-gradient(
-        90deg,
-        #059669,
-        #22c55e
-    );
-    border-radius:30px;
-}
-
-
-/* University Card */
-
-.university-card{
-    min-width:310px;
-    max-width:310px;
-    flex-shrink:0;
-    overflow:hidden;
-    background:#ffffff;
-    border:1px solid rgba(15,118,110,.12);
-    border-radius:24px;
-    scroll-snap-align:start;
-    box-shadow:0 15px 40px rgba(15,23,42,.12);
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-}
-
-.university-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 25px 55px rgba(5,150,105,.23);
-}
-
-
-/* Card Image */
-
-.university-image{
-    position:relative;
-    height:215px;
-    overflow:hidden;
-}
-
-.university-image img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    transition:transform .7s ease;
-}
-
-.university-card:hover .university-image img{
-    transform:scale(1.12);
-}
-
-
-/* Card Number */
-
-.university-number{
-    position:absolute;
-    top:16px;
-    left:16px;
-    width:42px;
-    height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:#059669;
-    color:#ffffff;
-    font-size:15px;
-    font-weight:800;
-    box-shadow:0 8px 20px rgba(5,150,105,.35);
-}
-
-
-/* Public / Private Label */
-
-.university-type{
-    position:absolute;
-    top:17px;
-    right:16px;
-    padding:7px 14px;
-    border-radius:30px;
-    color:#ffffff;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.5px;
-}
-
-.university-type.public{
-    background:#2563eb;
-}
-
-.university-type.private{
-    background:#7c3aed;
-}
-
-
-/* Card Content */
-
-.university-content{
-    padding:24px;
-}
-
-.university-content h3{
-    min-height:56px;
-    margin-bottom:10px;
-    color:#064e3b;
-    font-size:21px;
-    line-height:1.3;
-}
-
-.university-japanese{
-    min-height:52px;
-    margin-bottom:14px;
-    color:#64748b;
-    font-size:14px;
-    line-height:1.7;
-}
-
-.university-location{
-    margin-bottom:20px;
-    color:#15803d;
-    font-size:14px;
-    font-weight:700;
-}
-
-
-/* Visit Button */
-
-.university-button{
-    width:100%;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:13px 18px;
-    border:2px solid #059669;
-    border-radius:12px;
-    background:#059669;
-    color:#ffffff;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:700;
-    transition:.35s;
-}
-
-.university-button:hover{
-    background:transparent;
-    color:#059669;
-}
-
-
-/* Responsive */
-
-@media(max-width:768px){
-
-    .university-section{
-        padding:80px 6%;
-    }
-
-    .university-heading h2{
-        font-size:34px;
-    }
-
-    .university-card{
-        min-width:285px;
-        max-width:285px;
-    }
-
-    .university-image{
-        height:200px;
-    }
-}
-
-@media(max-width:480px){
-
-    .university-heading h2{
-        font-size:29px;
-    }
-
-    .university-heading p{
-        font-size:15px;
-    }
-
-    .university-card{
-        min-width:265px;
-        max-width:265px;
-    }
-
-    .university-content{
-        padding:21px;
-    }
-}
-.heritage-slide-card{
-
-    background:#fff;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-
-}
-
-.heritage-slide-card img{
-
-    width:100%;
-
-    height:220px;
-
-    display:block;
-
-    object-fit:cover;
-
-}
-
-.heritage-slide-text{
-
-    background:#fff;
-
-    padding:18px;
-
-}
-
-.heritage-slide-text h3{
-
-    margin-bottom:10px;
-
-    color:#14532d;
-
-}
-
-.heritage-slide-text p{
-
-    color:#666;
-
-    line-height:1.7;
-
-}
-.heritage-slide-card{
-    position: relative;
-    background: #ffffff !important;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.heritage-slide-card::before,
-.heritage-slide-card::after{
-    display: none !important;
-    content: none !important;
-}
-
-.heritage-slide-card img{
+.cox-content h3 {
+  font-size: 30px;
+  color: #166534;
+  margin-bottom: 15px;
+}
+.cox-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ================= দুই স্লাইডারের সাধারণ স্টাইল (বিশ্ববিদ্যালয় + ঐতিহ্য) ================= */
+.heritage-slider-section,
+.university-section {
+  padding: 100px 7%;
+  overflow: hidden;
+}
+.heritage-slider-section {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(34, 197, 94, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fff9, #effaf4, #f8fafc);
+}
+.university-section {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(16, 185, 129, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f0fdf4, #f8fafc, #ecfdf5);
+}
+
+/* শিরোনাম অংশ */
+.heritage-slider-heading,
+.university-heading {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+.heritage-slider-heading span,
+.university-heading span {
+  display: inline-block;
+  padding: 9px 22px;
+  margin-bottom: 16px;
+  border-radius: 50px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.heritage-slider-heading h2,
+.university-heading h2 {
+  margin-bottom: 15px;
+  color: #064e3b;
+  font-size: 42px;
+}
+.heritage-slider-heading p,
+.university-heading p {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* পাশে স্ক্রল হওয়া লাইন */
+.heritage-slider,
+.university-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 15px 8px 35px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.heritage-slider::-webkit-scrollbar,
+.university-slider::-webkit-scrollbar {
+  height: 10px;
+}
+.heritage-slider::-webkit-scrollbar-track,
+.university-slider::-webkit-scrollbar-track {
+  background: #d1fae5;
+  border-radius: 30px;
+}
+.heritage-slider::-webkit-scrollbar-thumb,
+.university-slider::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #059669, #22c55e);
+  border-radius: 30px;
+}
+
+/* স্লাইডারের কার্ড (চওড়া --w থেকে আসে) */
+.heritage-slide-card,
+.university-card {
+  min-width: var(--w);
+  max-width: var(--w);
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 22px;
+  scroll-snap-align: start;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.14);
+  transition: 0.45s;
+}
+.heritage-slide-card:hover,
+.university-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 55px rgba(5, 150, 105, 0.25);
+}
+
+/* ================= ঐতিহ্য কার্ডের ভেতর ================= */
+.heritage-slide-card img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  transition: 0.7s;
+}
+.heritage-slide-card:hover img {
+  transform: scale(1.12);
+}
+.heritage-slide-text {
+  padding: 18px;
+}
+.heritage-slide-text h3 {
+  margin-bottom: 8px;
+  color: #14532d;
+  font-size: 24px;
+}
+.heritage-slide-text p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ================= বিশ্ববিদ্যালয় কার্ডের ভেতর ================= */
+.university-image {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+}
+.university-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: 0.7s;
+}
+.university-card:hover .university-image img {
+  transform: scale(1.12);
+}
+.university-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #059669;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+} /* বাম কোণের নম্বর */
+.university-type {
+  position: absolute;
+  top: 17px;
+  right: 16px;
+  padding: 7px 14px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+} /* ডান কোণের Public/Private */
+.university-type.public {
+  background: #2563eb;
+}
+.university-type.private {
+  background: #7c3aed;
+}
+.university-content {
+  padding: 24px;
+}
+.university-content h3 {
+  min-height: 56px;
+  margin-bottom: 10px;
+  color: #064e3b;
+  font-size: 21px;
+  line-height: 1.3;
+}
+.university-japanese {
+  min-height: 52px;
+  margin-bottom: 14px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.university-location {
+  margin-bottom: 20px;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 700;
+}
+.university-button {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  padding: 13px 18px;
+  border: 2px solid #059669;
+  border-radius: 12px;
+  background: #059669;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.35s;
+}
+.university-button:hover {
+  background: transparent;
+  color: #059669;
+}
+
+/* ================= ফুটার ================= */
+.site-footer {
+  background: #fff;
+  margin-top: 60px;
+  padding: 0 3% 25px;
+}
+.footer-art-wrap {
+  position: relative;
+  height: 150px;
+  border-bottom: 3px solid #166534;
+} /* সবুজ লাইন + ছবির জায়গা */
+.footer-art {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  height: auto;
+} /* ছবি লাইনের উপরে বসে */
+.footer-art.left {
+  left: 0;
+} /* গাছ বামে */
+.footer-art.right {
+  right: 0;
+} /* স্মৃতিসৌধ ডানে */
+.site-footer p {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 18px 10px 0;
+}
+
+/* ================= রেসপন্সিভ ================= */
+
+/* ট্যাবলেট (৯৯২px বা কম) */
+@media (max-width: 992px) {
+  nav {
+    padding: 15px 4%;
+  }
+  nav h2 {
+    font-size: 22px;
+  }
+  nav ul {
+    gap: 16px;
+  }
+  nav a {
+    font-size: 14px;
+  }
+  .hero {
+    padding: 60px 5%;
+    gap: 30px;
+  }
+  .hero-left h1 {
+    font-size: 52px;
+  }
+  .hero-right img {
     width: 100%;
-    height: 220px;
-    display: block;
-    object-fit: cover;
-    filter: none !important;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .about,
+  .highlights,
+  .place {
+    padding: 70px 5%;
+  }
+  .about h2,
+  .highlights h2,
+  .place h2,
+  .place h1 {
+    font-size: 34px;
+  }
+  .info-boxes,
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  } /* ২ কলাম */
+  .hero-text {
+    padding: 40px;
+  }
+  .hero-text h1 {
+    font-size: 40px;
+  }
+  .heritage-slider-section,
+  .university-section {
+    padding: 80px 5%;
+  }
 }
 
-.heritage-slide-text{
-    position: static !important;
-    background: #ffffff !important;
-    background-image: none !important;
-    color: #333 !important;
-    padding: 18px;
-    margin: 0;
-    transform: none !important;
+/* মোবাইল (৭৬৮px বা কম) */
+@media (max-width: 768px) {
+  :root {
+    --w: 270px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 4%;
+  } /* লোগো উপরে, মেনু নিচে */
+  nav h2 {
+    font-size: 20px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+  nav a {
+    font-size: 13px;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    min-height: auto;
+    padding: 40px 5% 60px;
+  } /* ছবি উপরে, লেখা নিচে */
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+  .hero-left h1 {
+    font-size: 38px;
+  }
+  .hero-left p {
+    font-size: 16px;
+  }
+  .hero-right img {
+    max-width: 260px;
+  }
+  .about,
+  .highlights,
+  .place {
+    padding: 55px 5%;
+  }
+  .about h2,
+  .highlights h2,
+  .place h2,
+  .place h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .about p {
+    font-size: 16px;
+  }
+  .info-boxes,
+  .cards {
+    grid-template-columns: 1fr;
+  } /* ১ কলাম */
+  .banner {
+    padding: 50px 5% 30px;
+  }
+  .banner h1 {
+    font-size: 32px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+  .hero-card,
+  .dhaka-card,
+  .cox-card,
+  .dhaka-card:nth-child(even),
+  .cox-card:nth-child(even) {
+    flex-direction: column;
+  } /* ছবি উপরে, লেখা নিচে */
+  .hero-card {
+    margin: 40px auto;
+  }
+  .hero-card img,
+  .dhaka-card img,
+  .cox-card img {
+    width: 100%;
+    height: 240px;
+  }
+  .hero-text,
+  .card-content,
+  .cox-content {
+    width: 100%;
+    padding: 25px;
+  }
+  .hero-text {
+    padding: 30px;
+  }
+  .hero-text h1 {
+    font-size: 32px;
+  }
+  .hero-text p {
+    font-size: 16px;
+  }
+  .card-content h3,
+  .cox-content h3 {
+    font-size: 24px;
+  }
+  .heritage-slider-section,
+  .university-section {
+    padding: 60px 5%;
+  }
+  .heritage-slider-heading h2,
+  .university-heading h2 {
+    font-size: 30px;
+  }
+  .university-image {
+    height: 200px;
+  }
+  .footer-art-wrap {
+    height: 120px;
+  } /* ফুটারের ছবি ছোট */
+  .footer-art {
+    width: 220px;
+  }
+  .site-footer p {
+    font-size: 13px;
+  }
 }
 
-.heritage-slide-text::before,
-.heritage-slide-text::after{
-    display: none !important;
-    content: none !important;
-}
-
-.heritage-slide-text h3{
-    color: #14532d !important;
-    margin: 0 0 8px;
-}
-
-.heritage-slide-text p{
-    color: #666 !important;
-    margin: 0;
+/* খুব ছোট ফোন (৪০০px বা কম) */
+@media (max-width: 400px) {
+  :root {
+    --w: 240px;
+  }
+  nav h2 {
+    font-size: 18px;
+  }
+  nav ul {
+    gap: 6px 12px;
+  }
+  nav a {
+    font-size: 12px;
+  }
+  .hero-left h1 {
+    font-size: 32px;
+  }
+  .hero-left p {
+    font-size: 15px;
+  }
+  .hero-btn {
+    padding: 13px 30px;
+  }
+  .hero-right img {
+    max-width: 220px;
+  }
+  .about h2,
+  .highlights h2,
+  .place h2,
+  .place h1 {
+    font-size: 25px;
+  }
+  .info-card {
+    padding: 22px;
+  }
+  .hero-card img,
+  .dhaka-card img,
+  .cox-card img {
+    height: 200px;
+  }
+  .hero-text {
+    padding: 22px;
+  }
+  .hero-text h1 {
+    font-size: 26px;
+  }
+  .card-content,
+  .cox-content {
+    padding: 20px;
+  }
+  .heritage-slider-heading h2,
+  .university-heading h2 {
+    font-size: 26px;
+  }
+  .heritage-slider-heading p,
+  .university-heading p {
+    font-size: 15px;
+  }
+  .footer-art-wrap {
+    height: 90px;
+  } /* ফুটারের ছবি আরও ছোট */
+  .footer-art {
+    width: 150px;
+  }
+  .site-footer p {
+    font-size: 12px;
+  }
 }
