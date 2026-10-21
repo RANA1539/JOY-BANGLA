@@ -273,6 +273,36 @@ nav a:hover {
   height: 220px;
 } /* ছোট ছবি */
 
+/* bangladesh border map */
+
+.main {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 30px 6%;
+  justify-content: center;
+  gap: 70px;
+  
+}
+
+.img {
+  width: 170px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 4px 4px 12px #aaa;
+  flex-shrink: 0;
+  margin-left:10px;
+  /* gap: 30px; */
+}
+
+.hilt {
+  font-weight: initial;
+  text-align: left;
+}
+
+
+
 /* ================= কার্ড (খাবারের জন্য) ================= */
 .cards {
   display: grid;
