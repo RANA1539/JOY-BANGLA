@@ -56,45 +56,57 @@
 </section>
 
 <!-- ========== দর্শনীয় স্থান (ট্যুরিস্ট স্পট কার্ড) ========== -->
-<section class="highlights" id="highlights">
-    <h2>ハイライト</h2>
-    <div class="cards">
+<!-- ========== দর্শনীয় স্থান (বামে লেখা, ডানে ছবির গ্যালারি) ========== -->
+<section class="gallery-section" id="highlights">
 
-        <!-- স্পট কার্ড ১: ঢাকা (ক্লিক করলে dhaka.html খুলবে) -->
-        <a href="dhaka.html" class="card">
-            <img src="img/dhaka.jpg" alt="Dhaka">
-            <h3>Dhaka（ダッカ）</h3>
-        </a>
+    <!-- বামের অংশ: শিরোনাম, লেখা, বাটন -->
+    <div class="gallery-text">
+        <h2>ハイライト</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis autem aut quos, beatae rerum non nam repudiandae quidem, possimus fuga odio cumque ullam. Debitis, veniam. Et necessitatibus corrupti, enim libero est quam aspernatur pariatur dolor officiis autem animi neque excepturi. Quam assumenda rerum asperiores deleniti, necessitatibus nesciunt, rem sunt magnam illum nihil commodi consequuntur odio eaque, officiis ratione excepturi? Velit impedit minima cupiditate aliquam soluta a repellat, ut eaque eius est possimus consectetur unde similique atque! Nihil quam iste molestiae atque! Delectus illum incidunt quaerat nobis culpa porro, voluptatibus consequatur explicabo similique esse ea assumenda labore, quisquam nulla expedita cupiditate? Provident delectus veniam ducimus rerum cupiditate voluptates temporibus facilis, explicabo maxime unde hic fuga voluptas perferendis quo consequatur ab quis?バングラデシュには、活気あふれる首都ダッカから、世界最長のビーチ、神秘的なマングローブ林、緑豊かな丘陵地帯まで、多彩な魅力があります。</p>
+        <p>気になる場所を選んで、旅の計画を始めましょう。</p>
+        <a href="#food" class="gallery-btn">もっと見る</a>
+    </div>
 
-        <!-- স্পট কার্ড ২: কক্সবাজার (ক্লিক করলে cox.html খুলবে) -->
-        <a href="cox.html" class="card">
-            <img src="img/cox.jpg" alt="Cox's Bazar">
-            <h3>Cox's Bazar（コックスバザール）</h3>
-        </a>
+    <!-- ডানের অংশ: দুই কলামের ছবি -->
+    <div class="gallery-grid">
 
-        <!-- স্পট কার্ড ৩: সুন্দরবন (ক্লিক করলে sundarban.html খুলবে) -->
-        <a href="sundarban.html" class="card">
-            <img src="img/sundarban.jpg" alt="Sundarbans">
-            <h3>Sundarbans（スンダルバンス）</h3>
-        </a>
+        <!-- প্রথম কলাম -->
+        <div class="gallery-col">
+            <!-- ঢাকা (লম্বা) -->
+            <a href="dhaka.html" class="gallery-item tall">
+                <img src="img/dhaka.jpg" alt="Dhaka">
+                <span>Dhaka（ダッカ）</span>
+            </a>
+            <!-- বান্দরবান (ছোট) -->
+            <a href="bandarban.html" class="gallery-item short">
+                <img src="img/bandarban.jpg" alt="Bandarban">
+                <span>Bandarban（バンダルバン）</span>
+            </a>
+            <!-- রাঙামাটি (মাঝারি) -->
+            <a href="rangamati.html" class="gallery-item medium">
+                <img src="img/rangamati.jpg" alt="Rangamati">
+                <span>Rangamati（ランガマティ）</span>
+            </a>
+        </div>
 
-        <!-- স্পট কার্ড ৪: বান্দরবান (ক্লিক করলে bandarban.html খুলবে) -->
-        <a href="bandarban.html" class="card">
-            <img src="img/bandarban.jpg" alt="Bandarban">
-            <h3>Bandarban（バンダルバン）</h3>
-        </a>
-
-        <!-- স্পট কার্ড ৫: সিলেট (ক্লিক করলে sylhet.html খুলবে) -->
-        <a href="sylhet.html" class="card">
-            <img src="img/sylhet.jpg" alt="Sylhet">
-            <h3>Sylhet（シレット）</h3>
-        </a>
-
-        <!-- স্পট কার্ড ৬: রাঙামাটি (ক্লিক করলে rangamati.html খুলবে) -->
-        <a href="rangamati.html" class="card">
-            <img src="img/rangamati.jpg" alt="Rangamati">
-            <h3>Rangamati（ランガマティ）</h3>
-        </a>
+        <!-- দ্বিতীয় কলাম -->
+        <div class="gallery-col">
+            <!-- কক্সবাজার (মাঝারি) -->
+            <a href="cox.html" class="gallery-item medium">
+                <img src="img/cox.jpg" alt="Cox's Bazar">
+                <span>Cox's Bazar（コックスバザール）</span>
+            </a>
+            <!-- সুন্দরবন (লম্বা) -->
+            <a href="sundarban.html" class="gallery-item tall">
+                <img src="img/sundarban.jpg" alt="Sundarbans">
+                <span>Sundarbans（スンダルバンス）</span>
+            </a>
+            <!-- সিলেট (ছোট) -->
+            <a href="sylhet.html" class="gallery-item short">
+                <img src="img/sylhet.jpg" alt="Sylhet">
+                <span>Sylhet（シレット）</span>
+            </a>
+        </div>
 
     </div>
 </section>
