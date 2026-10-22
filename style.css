@@ -276,8 +276,8 @@ nav a:hover {
 /* bangladesh border map */
 
 .main {
-  background-color: lightblue;
-   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #E0E0E0, #F5F5F5);;
+   box-shadow: 0 12px 28px rgba(91, 15, 15, 0.1);
   display: flex;
   align-items: center;
   padding: 30px 6%;
