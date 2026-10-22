@@ -413,7 +413,7 @@ nav a:hover {
 }
 
 .card-image img {
-  max-width: %;
+  max-width: 0%;
   max-height: 80%;
   object-fit: contain;
 }
