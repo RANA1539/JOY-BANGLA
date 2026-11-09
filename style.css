@@ -3,6 +3,10 @@
 * body{
   zoom: 80%;
 }
+* {
+  font: 1em sans-serif;
+}
+
  * {
   margin: 0;
   padding: 0;
@@ -367,7 +371,7 @@ nav a:hover {
 
 .card-container {
   display: flex;
-  gap: 24px;
+  gap: 30px;
   justify-content: center;
   padding: 30px;
   flex-wrap: wrap; /* 画面幅が狭いときに折返す */
@@ -375,6 +379,8 @@ nav a:hover {
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
   
 }
+
+
 
 /* カード全体のスタイル */
 .card {
@@ -413,9 +419,9 @@ nav a:hover {
 }
 
 .card-image img {
-  max-width: 0%;
+  max-width: 100%;
   max-height: 80%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* カードのコンテンツ・テキスト関係 */
