@@ -98,7 +98,7 @@ nav a:hover {
 .visit-btn {
   display: inline-block;
   background: #16a34a;
-  color: #b38a8a;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
