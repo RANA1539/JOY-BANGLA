@@ -1,29 +1,37 @@
-/*
- ================= সাধারণ সেটিং ================= */
-* body{
+/**
+
+================= সাধারণ সেটিং ================= */
+body {
   zoom: 80%;
 }
- * {
+* {
+  font: 1em sans-serif;
+}
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
-} /* সব জায়গার ফাঁকা জায়গা শূন্য */
+}
+/* সব জায়গার ফাঁকা জায়গা শূন্য */
 html {
   scroll-behavior: smooth;
-} /* মেনুতে ক্লিক করলে নরম স্ক্রল */
+}
+/* মেনুতে ক্লিক করলে নরম স্ক্রল */
 body {
   background: hwb(80 97% 2%);
   color: #24bf50;
   overflow-x: hidden;
-} /* পাশে স্ক্রল বন্ধ */
+}
+/* পাশে স্ক্রল বন্ধ */
 img {
   max-width: 100%;
-} /* ছবি স্ক্রিনের বাইরে যাবে না */
+}
+/* ছবি স্ক্রিনের বাইরে যাবে না */
 :root {
   --w: 310px;
-} /* স্লাইডার কার্ডের চওড়া (মোবাইলে ছোট হবে) */
-
+}
+/* স্লাইডার কার্ডের চওড়া (মোবাইলে ছোট হবে) */
 /* ================= নেভবার ================= */
 nav {
   width: 100%;
@@ -41,12 +49,14 @@ nav {
 nav h2 {
   color: #166534;
   font-size: 26px;
-} /* লোগো লেখা */
+}
+/* লোগো লেখা */
 nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
-} /* মেনু এক লাইনে */
+}
+/* মেনু এক লাইনে */
 nav a {
   text-decoration: none;
   color: #1f2937;
@@ -55,7 +65,6 @@ nav a {
 nav a:hover {
   color: #16a34a;
 }
-
 /* ================= হিরো (প্রথম বড় ব্যানার) ================= */
 .hero {
   min-height: 100vh;
@@ -63,14 +72,14 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
   background:
     radial-gradient(circle at top left, #bbf7d0, transparent 35%),
     linear-gradient(135deg, #fff, #ecfdf5);
 }
 .hero-left {
   width: 50%;
-} /* বামে লেখা */
+}
+/* বামে লেখা */
 .hero-left h1 {
   font-size: 72px;
   line-height: 1.1;
@@ -89,11 +98,12 @@ nav a:hover {
 .visit-btn {
   display: inline-block;
   background: #16a34a;
-  color: #b38a8a;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-} /* দুই ধরনের বাটন একসাথে */
+}
+/* দুই ধরনের বাটন একসাথে */
 .hero-btn {
   margin-top: 35px;
   padding: 15px 38px;
@@ -113,7 +123,8 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-} /* ডানে ছবি */
+}
+/* ডানে ছবি */
 .hero-right img {
   width: 430px;
   height: 430px;
@@ -130,8 +141,8 @@ nav a:hover {
   50% {
     transform: translateY(-18px);
   }
-} /* ছবি ওঠানামা */
-
+}
+/* ছবি ওঠানামা */
 /* ================= সেকশনের সাধারণ মাপ ও শিরোনাম ================= */
 .about,
 .highlights,
@@ -153,7 +164,6 @@ nav a:hover {
   color: #166534;
   margin-bottom: 50px;
 }
-
 /* ================= পরিচিতি + ৪টা তথ্য বক্স ================= */
 .about p {
   max-width: 1000px;
@@ -188,7 +198,6 @@ nav a:hover {
   font-weight: bold;
   color: #166534;
 }
-
 /* ================= ハイライト গ্যালারি (বামে লেখা, ডানে ছবি) ================= */
 .gallery-section {
   display: grid;
@@ -198,19 +207,23 @@ nav a:hover {
   max-width: 1250px;
   margin: auto;
   padding: 90px 5%;
-} /* বামে লেখা, ডানে ছবি */
+  background-color: #fff;
+}
+/* বামে লেখা, ডানে ছবি */
 .gallery-text h2 {
   margin-bottom: 20px;
   color: #b56f0e;
   font-size: 48px;
   text-align: left;
-} /* শিরোনাম */
+}
+/* শিরোনাম */
 .gallery-text p {
   margin-bottom: 20px;
   color: #020202;
   font-size: 17px;
   line-height: 1.9;
-} /* বর্ণনা */
+}
+/* বর্ণনা */
 .gallery-btn {
   display: inline-block;
   margin-top: 10px;
@@ -221,7 +234,8 @@ nav a:hover {
   text-decoration: none;
   font-weight: 700;
   transition: 0.3s;
-} /* গ্রেডিয়েন্ট বাটন */
+}
+/* গ্রেডিয়েন্ট বাটন */
 .gallery-btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 25px rgba(22, 163, 74, 0.35);
@@ -229,19 +243,22 @@ nav a:hover {
 .gallery-grid {
   display: flex;
   gap: 12px;
-} /* দুই কলাম পাশাপাশি */
+}
+/* দুই কলাম পাশাপাশি */
 .gallery-col {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
-} /* প্রতি কলামে ছবি উপর-নিচে */
+}
+/* প্রতি কলামে ছবি উপর-নিচে */
 .gallery-item {
   position: relative;
   display: block;
   border-radius: 8px;
   overflow: hidden;
-} /* ছোট গোল কোণ */
+}
+/* ছোট গোল কোণ */
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -251,7 +268,8 @@ nav a:hover {
 }
 .gallery-item:hover img {
   transform: scale(1.08);
-} /* হোভারে ছবি বড় */
+}
+/* হোভারে ছবি বড় */
 .gallery-item span {
   position: absolute;
   left: 0;
@@ -262,30 +280,30 @@ nav a:hover {
   color: #b19d9d;
   font-size: 17px;
   font-weight: 700;
-} /* ছবির নিচের নাম */
+}
+/* ছবির নিচের নাম */
 .gallery-item.tall {
   height: 420px;
-} /* লম্বা ছবি */
+}
+/* লম্বা ছবি */
 .gallery-item.medium {
   height: 300px;
-} /* মাঝারি ছবি */
+}
+/* মাঝারি ছবি */
 .gallery-item.short {
   height: 220px;
-} /* ছোট ছবি */
-
+}
+/* ছোট ছবি */
 /* bangladesh border map */
-
 .main {
-  background: linear-gradient(135deg, #E0E0E0, #F5F5F5);;
-   box-shadow: 0 12px 28px rgba(91, 15, 15, 0.1);
+  background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+  box-shadow: 0 12px 28px rgba(91, 15, 15, 0.1);
   display: flex;
   align-items: center;
   padding: 30px 6%;
   justify-content: center;
   gap: 70px;
-  
 }
-
 .img {
   width: 170px;
   height: 250px;
@@ -293,25 +311,22 @@ nav a:hover {
   border-radius: 20px;
   box-shadow: 4px 4px 12px #aaa;
   flex-shrink: 0;
-  margin-left:10px;
+  margin-left: 10px;
   /* gap: 30px; */
 }
-
 .hilt {
   font-weight: initial;
   text-align: left;
 }
-
-
-
 /* ================= কার্ড (খাবারের জন্য) ================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-} /* ৩ কলাম */
+  gap: 10px;
+}
+/* ৩ কলাম */
 .card {
-  position: relative;
+  /* position: relative; */
   min-height: 260px;
   background: #fff;
   border-radius: 26px;
@@ -320,6 +335,8 @@ nav a:hover {
   color: #111;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
   transition: 0.4s;
+  align-items: center;
+  padding-left: 499px;
 }
 .card:hover {
   transform: translateY(-12px);
@@ -349,7 +366,8 @@ nav a:hover {
   padding: 25px;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   color: #fff;
-} /* ছবির উপরের লেখা */
+}
+/* ছবির উপরের লেখা */
 .card-body h3 {
   color: #fff;
   font-size: 24px;
@@ -362,111 +380,103 @@ nav a:hover {
   font-size: 15px;
   line-height: 1.6;
 }
-
 /* ================= খেলার কার্ড (ফিকে বক্স + আউটলাইন বাটন) ================= */
-
-.card-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  padding: 30px;
-  flex-wrap: wrap; /* 画面幅が狭いときに折返す */
-  background: linear-gradient(145deg, #f9f6f6 0%, #dbdbd5 45%, #dee9d8 100%);
-  box-shadow: 0 12px 32px rgba(239, 240, 240, 0.08);
-  
-}
-
-/* カード全体のスタイル */
-.card {
-  background-color: #e7e8e2; /* カード背景色（薄いグレー） */
-  border-radius: 10px; /* 角丸設定 */
-  width: 400px;
-  padding: 10px;
-  box-sizing: border-box;
+/* ================= খেলার কার্ড (ফিকে বক্স + আউটলাইন বাটন) ================= */
+.sport-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+} /* ল্যাপটপে ৪ কলাম */
+.sport-card {
   display: flex;
   flex-direction: column;
+  padding: 25px;
+  background: #f0f5f2;
+  border-radius: 28px;
+  transition: 0.4s;
+  height: 700px;
 }
-
-/* 画像エリアの設定 */
-.card-image {
-  width: 100%;
-  height: 250px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sport-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(22, 101, 52, 0.15);
+}
+.sport-img {
+  height: 170px;
+  margin-bottom: 25px;
+  border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 30px;
+} /* গোল কোণের ছবির বক্স */
+.sport-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
 }
-
-/* 画像エリアの背景色（各カードごとに設定） */
-.bg-gray {
-  background-color: #878282;
+.sport-card:hover .sport-img img {
+  transform: scale(1.08);
 }
-
-.bg-yellow {
-  background-color: rgb(195, 202, 195);
-}
-
-.bg-blue {
-  background-color: #c5c9c4;
-}
-
-.card-image img {
-<<<<<<< HEAD
-  max-width:%;
-  max-height:%;
-  object-fit:contain;
-=======
-  max-width: 0%;
-  max-height: 80%;
-  object-fit: contain;
->>>>>>> c11e90e354b3916e504f4d2b6d94f48c5f0d09f5
-}
-
-/* カードのコンテンツ・テキスト関係 */
-.card-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* 下部のボタン位置を揃える */
-}
-
-.card-title {
-  font-size: 1.5rem;
+.sport-card h3 {
+  margin-bottom: 15px;
+  color: #14532d;
+  font-size: 26px;
   font-weight: 600;
-  color: #9b9fa5;
-  margin: 0 0 16px 0;
-}
-
-.card-description {
-  font-size: 0.95rem;
-  color: #4b5563;
-  line-height: 1.5;
-  margin: 0 0 32px 0;
-  flex-grow: 1; /* 内容の長さに寄らずボタンを下に配置 */
-}
-
-/* ボタンのスタイル */
-.card-button {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 24px;
-  border: 1.5px solid #a3a8b3;
-  color: #2563eb;
-  border-radius: 50px; /* カプセル型の角丸 */
+} /* শিরোনাম */
+.sport-card p {
+  flex-grow: 1;
+  margin-bottom: 25px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.7;
+} /* বর্ণনা (বাটন সবসময় নিচে থাকে) */
+.sport-btn {
+  align-self: center;
+  padding: 11px 32px;
+  border: 1.5px solid #16a34a;
+  border-radius: 50px;
+  background: #fff;
+  color: #16a34a;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  align-self: flex-start; /* 左寄せ */
-  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+} /* আউটলাইন বাটন */
+.sport-btn:hover {
+  background: #16a34a;
+  color: #fff;
 }
 
-/* ボタンホバー時 */
-.card-button:hover {
-  background-color: #2563eb;
-  color: #ffffff;
+/* ট্যাবলেট (৯৯২px বা কম): ২ কলাম */
+@media (max-width: 992px) {
+  .sport-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* মোবাইল (৭৬৮px বা কম): ১ কলাম */
+@media (max-width: 768px) {
+  .sport-cards {
+    grid-template-columns: 1fr;
+  }
+  .sport-card {
+    padding: 20px;
+  }
+  .sport-img {
+    height: 200px;
+  }
+  .sport-card h3 {
+    font-size: 24px;
+  }
+}
+
+/* খুব ছোট ফোন (৪০০px বা কম) */
+@media (max-width: 400px) {
+  .sport-card h3 {
+    font-size: 22px;
+  }
+  .sport-card p {
+    font-size: 14px;
+  }
+}
 /* ================= খাবার সেকশন (সবুজ ব্যাকগ্রাউন্ড + স্লাইড অ্যানিমেশন) ================= */
 .place {
   background:
@@ -481,18 +491,21 @@ nav a:hover {
   gap: 32px;
 }
 .place .card {
-  height: 285px;
-  border-radius: 30px;
+  height: 450px;
+  border-radius: 15px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   opacity: 0;
   transition: 0.5s;
+  padding-bottom: 50px;
 }
 .place .card:nth-child(odd) {
   animation: slideLeft 1s ease forwards;
-} /* বেজোড় কার্ড বাম থেকে আসে */
+}
+/* বেজোড় কার্ড বাম থেকে আসে */
 .place .card:nth-child(even) {
   animation: slideRight 1s ease forwards;
-} /* জোড় কার্ড ডান থেকে আসে */
+}
+/* জোড় কার্ড ডান থেকে আসে */
 .place .card:nth-child(1) {
   animation-delay: 0.2s;
 }
@@ -525,7 +538,8 @@ nav a:hover {
     rgba(0, 0, 0, 0.2),
     transparent
   );
-} /* ছবির নিচে কালো ছায়া */
+}
+/* ছবির নিচে কালো ছায়া */
 .place .card > h3 {
   position: absolute;
   left: 0;
@@ -533,7 +547,8 @@ nav a:hover {
   bottom: 0;
   z-index: 2;
   color: #fff;
-} /* খাবারের নাম ছবির উপরে */
+}
+/* খাবারের নাম ছবির উপরে */
 .place .card:hover {
   transform: translateY(-15px) scale(1.04);
   box-shadow: 0 28px 60px rgba(22, 163, 74, 0.35);
@@ -561,7 +576,6 @@ nav a:hover {
     transform: none;
   }
 }
-
 /* ================= ডিটেইল পেজ (dhaka.html, cox.html ইত্যাদি) ================= */
 .banner {
   text-align: center;
@@ -615,7 +629,8 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 35px;
-} /* কার্ড উপর-নিচে */
+}
+/* কার্ড উপর-নিচে */
 .dhaka-card,
 .cox-card {
   display: flex;
@@ -629,7 +644,8 @@ nav a:hover {
 .dhaka-card:nth-child(even),
 .cox-card:nth-child(even) {
   flex-direction: row-reverse;
-} /* জোড় কার্ডে ছবি ডানে */
+}
+/* জোড় কার্ডে ছবি ডানে */
 .cox-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
@@ -656,7 +672,6 @@ nav a:hover {
   line-height: 1.8;
   color: #555;
 }
-
 /* ================= দুই স্লাইডারের সাধারণ স্টাইল (বিশ্ববিদ্যালয় + ঐতিহ্য) ================= */
 .heritage-slider-section,
 .university-section {
@@ -681,7 +696,6 @@ nav a:hover {
     ),
     linear-gradient(135deg, #f0fdf4, #f8fafc, #ecfdf5);
 }
-
 /* শিরোনাম অংশ */
 .heritage-slider-heading,
 .university-heading {
@@ -713,7 +727,6 @@ nav a:hover {
   font-size: 17px;
   line-height: 1.8;
 }
-
 /* পাশে স্ক্রল হওয়া লাইন */
 .heritage-slider,
 .university-slider {
@@ -738,7 +751,6 @@ nav a:hover {
   background: linear-gradient(90deg, #059669, #22c55e);
   border-radius: 30px;
 }
-
 /* স্লাইডারের কার্ড (চওড়া --w থেকে আসে) */
 .heritage-slide-card,
 .university-card {
@@ -757,7 +769,6 @@ nav a:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 55px rgba(5, 150, 105, 0.25);
 }
-
 /* ================= ঐতিহ্য কার্ডের ভেতর ================= */
 .heritage-slide-card img {
   width: 100%;
@@ -782,7 +793,6 @@ nav a:hover {
   font-size: 14px;
   line-height: 1.7;
 }
-
 /* ================= বিশ্ববিদ্যালয় কার্ডের ভেতর ================= */
 .university-image {
   position: relative;
@@ -813,7 +823,8 @@ nav a:hover {
   color: #fff;
   font-size: 15px;
   font-weight: 800;
-} /* বাম কোণের নম্বর */
+}
+/* বাম কোণের নম্বর */
 .university-type {
   position: absolute;
   top: 17px;
@@ -823,7 +834,8 @@ nav a:hover {
   color: #fff;
   font-size: 12px;
   font-weight: 700;
-} /* ডান কোণের Public/Private */
+}
+/* ডান কোণের Public/Private */
 .university-type.public {
   background: #2563eb;
 }
@@ -871,7 +883,6 @@ nav a:hover {
   background: transparent;
   color: #059669;
 }
-
 /* ================= ফুটার ================= */
 .site-footer {
   background: #fff;
@@ -882,19 +893,23 @@ nav a:hover {
   position: relative;
   height: 150px;
   border-bottom: 3px solid #166534;
-} /* সবুজ লাইন + ছবির জায়গা */
+}
+/* সবুজ লাইন + ছবির জায়গা */
 .footer-art {
   position: absolute;
   bottom: 0;
   width: 300px;
   height: auto;
-} /* ছবি লাইনের উপরে বসে */
+}
+/* ছবি লাইনের উপরে বসে */
 .footer-art.left {
   left: 0;
-} /* গাছ বামে */
+}
+/* গাছ বামে */
 .footer-art.right {
   right: 0;
-} /* স্মৃতিসৌধ ডানে */
+}
+/* স্মৃতিসৌধ ডানে */
 .site-footer p {
   text-align: center;
   color: #555;
@@ -902,9 +917,7 @@ nav a:hover {
   line-height: 1.8;
   padding: 18px 10px 0;
 }
-
 /* ================= রেসপন্সিভ ================= */
-
 /* ট্যাবলেট (৯৯২px বা কম) */
 @media (max-width: 992px) {
   nav {
@@ -947,12 +960,14 @@ nav a:hover {
   .cards,
   .sport-cards {
     grid-template-columns: repeat(2, 1fr);
-  } /* ২ কলাম */
+  }
+  /* ২ কলাম */
   .gallery-section {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 70px 5%;
-  } /* গ্যালারি: লেখা উপরে, ছবি নিচে */
+  }
+  /* গ্যালারি: লেখা উপরে, ছবি নিচে */
   .gallery-text h2 {
     font-size: 36px;
   }
@@ -967,7 +982,6 @@ nav a:hover {
     padding: 80px 5%;
   }
 }
-
 /* মোবাইল (৭৬৮px বা কম) */
 @media (max-width: 768px) {
   :root {
@@ -977,7 +991,8 @@ nav a:hover {
     flex-direction: column;
     gap: 10px;
     padding: 12px 4%;
-  } /* লোগো উপরে, মেনু নিচে */
+  }
+  /* লোগো উপরে, মেনু নিচে */
   nav h2 {
     font-size: 20px;
   }
@@ -994,7 +1009,8 @@ nav a:hover {
     text-align: center;
     min-height: auto;
     padding: 40px 5% 60px;
-  } /* ছবি উপরে, লেখা নিচে */
+  }
+  /* ছবি উপরে, লেখা নিচে */
   .hero-left,
   .hero-right {
     width: 100%;
@@ -1027,10 +1043,12 @@ nav a:hover {
   .cards,
   .sport-cards {
     grid-template-columns: 1fr;
-  } /* ১ কলাম */
+  }
+  /* ১ কলাম */
   .gallery-section {
     padding: 55px 5%;
-  } /* গ্যালারি ছোট */
+  }
+  /* গ্যালারি ছোট */
   .gallery-text h2 {
     font-size: 40px;
   }
@@ -1073,7 +1091,8 @@ nav a:hover {
   .dhaka-card:nth-child(even),
   .cox-card:nth-child(even) {
     flex-direction: column;
-  } /* ছবি উপরে, লেখা নিচে */
+  }
+  /* ছবি উপরে, লেখা নিচে */
   .hero-card {
     margin: 40px auto;
   }
@@ -1115,7 +1134,8 @@ nav a:hover {
   }
   .footer-art-wrap {
     height: 120px;
-  } /* ফুটারের ছবি ছোট */
+  }
+  /* ফুটারের ছবি ছোট */
   .footer-art {
     width: 220px;
   }
@@ -1123,7 +1143,6 @@ nav a:hover {
     font-size: 13px;
   }
 }
-
 /* খুব ছোট ফোন (৪০০px বা কম) */
 @media (max-width: 400px) {
   :root {
@@ -1162,7 +1181,8 @@ nav a:hover {
   .gallery-grid,
   .gallery-col {
     gap: 8px;
-  } /* গ্যালারি আরও ছোট */
+  }
+  /* গ্যালারি আরও ছোট */
   .gallery-item.tall {
     height: 220px;
   }
@@ -1207,7 +1227,8 @@ nav a:hover {
   }
   .footer-art-wrap {
     height: 90px;
-  } /* ফুটারের ছবি আরও ছোট */
+  }
+  /* ফুটারের ছবি আরও ছোট */
   .footer-art {
     width: 150px;
   }
@@ -1215,63 +1236,48 @@ nav a:hover {
     font-size: 12px;
   }
 }
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================*
 
+  MOBILE*
+
+*========================================= */
 @media (max-width: 768px) {
-
-    .three-card-section {
-        width: 94%;
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-
-        padding: 20px;
-    }
-
-    .three-card {
-        min-height: auto;
-    }
-
-    .three-card img {
-        height: 250px;
-    }
-
-    .three-card-content {
-        padding: 24px;
-    }
-
-    .three-card-content h3 {
-        font-size: 22px;
-    }
-
+  .three-card-section {
+    width: 94%;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 20px;
+  }
+  .three-card {
+    min-height: auto;
+  }
+  .three-card img {
+    height: 250px;
+  }
+  .three-card-content {
+    padding: 24px;
+  }
+  .three-card-content h3 {
+    font-size: 22px;
+  }
 }
+/* =========================================*
 
+  ছোট MOBILE*
 
-/* =========================================
-   ছোট MOBILE
-========================================= */
-
+*========================================= */
 @media (max-width: 480px) {
-
-    .three-card-section {
-        width: 96%;
-
-        padding: 15px;
-    }
-
-    .three-card img {
-        height: 220px;
-    }
-
-    .three-card-content {
-        padding: 20px;
-    }
-
-    .three-card-content h3 {
-        font-size: 20px;
-    }
-
+  .three-card-section {
+    width: 96%;
+    padding: 15px;
+  }
+  .three-card img {
+    height: 220px;
+  }
+  .three-card-content {
+    padding: 20px;
+  }
+  .three-card-content h3 {
+    font-size: 20px;
+  }
 }
