@@ -1,177 +1,225 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandarban Travel Guide</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bandarban Travel Guide</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17392d;
+      background: #f3f7f4;
+      line-height: 1.7;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px 5%;
+      background: #164d39;
+      color: white;
+    }
+    nav h2 { margin: 0; }
+    nav ul {
+      display: flex;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    nav a { color: white; text-decoration: none; }
+    main { max-width: 1200px; margin: auto; padding: 24px; }
+    .hero-card, .card {
+      overflow: hidden;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px #163c2910;
+    }
+    .photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #e6eee8;
+      cursor: zoom-in;
+    }
+    .hero-text, .card-body { padding: 24px; }
+    h1 { font-size: clamp(32px, 6vw, 56px); margin: 0; }
+    h3 { margin: 0 0 8px; }
+    .visit-btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 8px;
+      color: white;
+      background: #176b48;
+      text-decoration: none;
+    }
+    .place { margin-top: 36px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .card { min-width: 0; }
+    .missing {
+      padding: 20px;
+      margin: 0;
+      overflow-wrap: anywhere;
+      color: #793a19;
+      background: #fff1df;
+    }
+    footer { padding: 24px; text-align: center; }
+    dialog {
+      width: min(1100px, 96vw);
+      max-height: 95vh;
+      padding: 12px;
+      border: 0;
+      border-radius: 12px;
+    }
+    dialog::backdrop { background: #000c; }
+    dialog img {
+      display: block;
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+    dialog button {
+      display: block;
+      margin: 0 0 12px auto;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    .photo:focus-visible { outline: 4px solid #d39419; }
+  </style>
 </head>
 <body>
-
-<!-- Navbar -->
-
-<nav>
-
+  <nav>
     <h2>BD Bandarban Guide</h2>
-
     <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="#places">観光地</a></li>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="#places">観光地</a></li>
     </ul>
+  </nav>
 
-</nav>
-
-<!-- Hero -->
-
-<section class="hero-card">
-
-    <img src="img/bandarban.jpg" alt="Bandarban">
-
-    <div class="hero-text">
-
+  <main>
+    <section class="hero-card">
+      <img class="photo" src="img/bandarban.jpg" alt="Bandarban">
+      <div class="hero-text">
         <h1>Bandarban</h1>
-
         <p>
-            バンダルバンはバングラデシュで最も美しい山岳地域です。
-            緑豊かな山々、滝、湖、そして先住民族の文化が魅力です。
+          バンダルバンはバングラデシュで最も美しい山岳地域です。
+          緑豊かな山々、滝、湖、そして先住民族の文化が魅力です。
         </p>
+        <a href="#places" class="visit-btn">Explore Now</a>
+      </div>
+    </section>
 
-        <a href="#places" class="visit-btn">
-            Explore Now
-        </a>
+    <section class="place" id="places">
+      <h2>人気観光地</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="photo" src="img/nilgiri.jpg" alt="Nilgiri" loading="lazy">
+          <div class="card-body">
+            <h3>Nilgiri</h3>
+            <p>バングラデシュで最も有名な山のリゾート。雲の上から美しい景色を見ることができます。</p>
+          </div>
+        </article>
 
-    </div>
+        <article class="card">
+          <img class="photo" src="img/nafakhum.jpg" alt="Nafakhum Waterfall" loading="lazy">
+          <div class="card-body">
+            <h3>Nafakhum Waterfall</h3>
+            <p>バングラデシュ最大級の滝。自然が好きな人に人気があります。</p>
+          </div>
+        </article>
 
-</section>
+        <article class="card">
+          <img class="photo" src="img/boga.jpg" alt="Boga Lake" loading="lazy">
+          <div class="card-body">
+            <h3>Boga Lake</h3>
+            <p>山の上にある美しい湖。キャンプやトレッキングで有名です。</p>
+          </div>
+        </article>
 
-<!-- Places -->
+        <article class="card">
+          <img class="photo" src="img/chimbuk.jpg" alt="Chimbuk Hill" loading="lazy">
+          <div class="card-body">
+            <h3>Chimbuk Hill</h3>
+            <p>高い山から素晴らしい景色を楽しめます。</p>
+          </div>
+        </article>
 
-<section class="place" id="places">
+        <article class="card">
+          <img class="photo" src="img/shoilo-propat.jpg" alt="Shoilo Propat" loading="lazy">
+          <div class="card-body">
+            <h3>Shoilo Propat</h3>
+            <p>人気の滝で、多くの観光客が訪れます。</p>
+          </div>
+        </article>
 
-    <h2>人気観光地</h2>
+        <article class="card">
+          <img class="photo" src="img/sangu.jpg" alt="Sangu River" loading="lazy">
+          <div class="card-body">
+            <h3>Sangu River</h3>
+            <p>ボート旅行や自然を楽しめる美しい川です。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-    <div class="cards">
+  <footer>© 2026 Bangladesh Travel Website</footer>
 
-        <!-- Nilgiri -->
+  <dialog id="viewer" aria-label="拡大写真">
+    <button type="button" id="closeViewer">閉じる ✕</button>
+    <img id="largePhoto" alt="">
+  </dialog>
 
-        <div class="card">
+  <script>
+    const viewer = document.getElementById('viewer');
+    const largePhoto = document.getElementById('largePhoto');
 
-            <img src="/img/nilgiri.jpg">
+    document.getElementById('closeViewer').onclick = () => viewer.close();
 
-            <div class="card-body">
+    document.querySelectorAll('.photo').forEach(photo => {
+      photo.tabIndex = 0;
+      photo.setAttribute('role', 'button');
+      photo.setAttribute('aria-label', photo.alt + ' — 拡大');
 
-                <h3>Nilgiri</h3>
+      const openPhoto = () => {
+        if (!photo.naturalWidth) return;
+        largePhoto.src = photo.src;
+        largePhoto.alt = photo.alt;
+        viewer.showModal();
+      };
 
-                <p>
-                    バングラデシュで最も有名な山のリゾート。
-                    雲の上から美しい景色を見ることができます。
-                </p>
+      photo.addEventListener('click', openPhoto);
+      photo.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openPhoto();
+        }
+      });
 
-            </div>
+      const showMissing = () => {
+        if (photo.nextElementSibling?.classList.contains('missing')) return;
+        const message = document.createElement('p');
+        message.className = 'missing';
+        message.textContent = 'Rasm topilmadi: ' + photo.getAttribute('src') +
+          '. Shu faylni img papkasiga joylang.';
+        photo.after(message);
+        photo.hidden = true;
+        photo.style.display = 'none';
+      };
 
-        </div>
-
-        <!-- Nafakhum -->
-
-        <div class="card">
-
-            <img src="img/nafakhum.jpg">
-
-            <div class="card-body">
-
-                <h3>Nafakhum Waterfall</h3>
-
-                <p>
-                    バングラデシュ最大級の滝。
-                    自然が好きな人に人気があります。
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Boga Lake -->
-
-        <div class="card">
-
-            <img src="img/boga.jpg">
-
-            <div class="card-body">
-
-                <h3>Boga Lake</h3>
-
-                <p>
-                    山の上にある美しい湖。
-                    キャンプやトレッキングで有名です。
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Chimbuk -->
-
-        <div class="card">
-
-            <img src="img/chimbuk.jpg">
-
-            <div class="card-body">
-
-                <h3>Chimbuk Hill</h3>
-
-                <p>
-                    高い山から素晴らしい景色を楽しめます。
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Shoilo Propat -->
-
-        <div class="card">
-
-            <img src="img/shoilo-propat.jpg">
-
-            <div class="card-body">
-
-                <h3>Shoilo Propat</h3>
-
-                <p>
-                    人気の滝で、多くの観光客が訪れます。
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Sangu River -->
-
-        <div class="card">
-
-            <img src="img/sangu.jpg">
-
-            <div class="card-body">
-
-                <h3>Sangu River</h3>
-
-                <p>
-                    ボート旅行や自然を楽しめる美しい川です。
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <p>© 2026 Bangladesh Travel Website</p>
-
-</footer>
-
+      photo.addEventListener('error', showMissing);
+      if (photo.complete && !photo.naturalWidth) showMissing();
+    });
+  </script>
 </body>
 </html>
