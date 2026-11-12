@@ -333,8 +333,9 @@ nav a:hover {
 /* ================= কার্ড (খাবারের জন্য) ================= */
 .cards {
   display: grid;
+  padding-left: 150px;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 0px;
 }
 /* ৩ কলাম */
 .card {
@@ -500,7 +501,7 @@ nav a:hover {
     linear-gradient(135deg, #ecfdf5, #f0f9ff);
 }
 .place .cards {
-  gap: 32px;
+  gap: 52px;
 }
 .place .card {
   height: 450px;
